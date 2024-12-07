@@ -13,7 +13,7 @@ export default function Summary({ income, expenses }) {
           <div>
             <p className="text-sm font-medium text-green-600 dark:text-green-400">Total Income</p>
             <h3 className="text-2xl font-bold text-green-700 dark:text-green-300 mt-1">
-              ${income.toFixed(2)}
+              Rs {income.toFixed(2)}
             </h3>
           </div>
           <div className="h-12 w-12 bg-green-200 dark:bg-green-800/30 rounded-full flex items-center justify-center">
@@ -27,7 +27,7 @@ export default function Summary({ income, expenses }) {
           <div>
             <p className="text-sm font-medium text-red-600 dark:text-red-400">Total Expenses</p>
             <h3 className="text-2xl font-bold text-red-700 dark:text-red-300 mt-1">
-              ${expenses.toFixed(2)}
+              Rs {expenses.toFixed(2)}
             </h3>
           </div>
           <div className="h-12 w-12 bg-red-200 dark:bg-red-800/30 rounded-full flex items-center justify-center">
@@ -45,7 +45,7 @@ export default function Summary({ income, expenses }) {
                 ? 'text-blue-700 dark:text-blue-300' 
                 : 'text-red-700 dark:text-red-300'
             }`}>
-              ${balance.toFixed(2)}
+              Rs {balance.toFixed(2)}
             </h3>
           </div>
           <div className="h-12 w-12 bg-blue-200 dark:bg-blue-800/30 rounded-full flex items-center justify-center">

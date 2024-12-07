@@ -54,7 +54,7 @@ export default function TransactionList({ transactions }) {
                   <TableCell className={`text-right font-medium ${
                     transaction.type === 'income' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
                   }`}>
-                    ${Number(transaction.amount).toFixed(2)}
+                    Rs {Number(transaction.amount).toFixed(2)}
                   </TableCell>
                 </TableRow>
               ))
