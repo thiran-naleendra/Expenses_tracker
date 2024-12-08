@@ -37,7 +37,9 @@ export default function Dashboard() {
     .reduce((sum, t) => sum + Number(t.amount), 0);
 
   return (
+    
     <div className="space-y-6">
+      <h1 className="text-3xl font-bold mb-8 text-center">Income & Expense Tracker</h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-1">
           <TransactionForm onSubmit={addTransaction} />
