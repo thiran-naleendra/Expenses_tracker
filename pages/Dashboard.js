@@ -1,11 +1,11 @@
 'use client';
-
+import '../app/globals.css';
 import { useState } from 'react';
-import TransactionForm from './TransactionForm';
-import TransactionList from './TransactionList';
-import Summary from './Summary';
-import ChartView from './ChartView';
-import { Filter } from './Filter';
+import TransactionForm from '../components/TransactionForm';
+import TransactionList from '../components/TransactionList';
+import Summary from '../components/Summary';
+import ChartView from '../components/ChartView';
+import { Filter } from '../components/Filter';
 
 export default function Dashboard() {
   const [transactions, setTransactions] = useState([]);
