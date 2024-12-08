@@ -1,5 +1,5 @@
 'use client'; // Mark this file as a Client Component
-
+import "../app/globals.css";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'; // For page navigation
 
