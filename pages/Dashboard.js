@@ -6,6 +6,7 @@ import TransactionList from "../components/TransactionList";
 import Summary from "../components/Summary";
 import ChartView from "../components/ChartView";
 import { Filter } from "../components/Filter";
+import Navbar from "../components/Navbar";
 
 export default function Dashboard() {
   const [transactions, setTransactions] = useState([]);
@@ -38,6 +39,9 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
+      <div>
+        <Navbar/>
+      </div>
       <h1 className="text-3xl font-bold mb-8 text-center">
         Income & Expense Tracker
       </h1>

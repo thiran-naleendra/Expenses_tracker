@@ -1,5 +1,5 @@
 // import Dashboard from '../pages/Dashboard';
-import Login from '../components/login';
+import Login from '../pages/login';
 
 export default function Home() {
   return (
