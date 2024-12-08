@@ -1,6 +1,8 @@
 import React from 'react'
 import { UserCircle, LogOut } from 'lucide-react';
 import UserMenu from './UserMenu';
+import Image from 'next/image';
+import { DollarSign, TrendingDown, TrendingUp } from 'lucide-react';
 
 function Navbar() {
   return (
@@ -9,7 +11,8 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Brand */}
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-gray-800">Your Brand</h1>
+          <TrendingUp className="h-6 w-6 text-green-700 dark:text-green-300" />
+            <h1 className="text-xl font-bold text-gray-800">&ensp;Expense Tracker</h1>
           </div>
 
           {/* Navigation Links */}

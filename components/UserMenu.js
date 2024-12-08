@@ -4,7 +4,7 @@ import { UserCircle, LogOut } from "lucide-react";
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState("john@example.com"); // Default email or placeholder
+  const [email, setEmail] = useState("wgthiran@gmail.com"); // Default email or placeholder
   const router = useRouter(); // Initialize the router
 
   useEffect(() => {
@@ -40,13 +40,13 @@ const UserMenu = () => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <UserCircle className="h-8 w-8" />
-        <span className="hidden md:inline">John Doe</span>
+        <span className="hidden md:inline">Thiran Naleendra</span>
       </button>
 
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
           <div className="px-4 py-2 border-b">
-            <p className="text-sm font-medium text-gray-900">John Doe</p>
+            <p className="text-sm font-medium text-gray-900">Thiran</p>
             <p className="text-sm text-gray-500">{email}</p>
           </div>
           {/* <a
