@@ -44,6 +44,8 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const apiUrl = process.env.API_URL;
+
     if (!validatePassword()) {
       toast({
         title: 'Error',

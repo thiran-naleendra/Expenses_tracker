@@ -3,11 +3,15 @@ import { useRouter } from "next/router"; // Import the router
 import { UserCircle, LogOut } from "lucide-react";
 
 const UserMenu = () => {
+  const [isMounted, setIsMounted] = useState(false); // State to track client-side mounting
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("wgthiran@gmail.com"); // Default email or placeholder
-  const router = useRouter(); // Initialize the router
+  // const router = useRouter(); // Initialize the router
 
+  // Ensure the component only runs on the client
   useEffect(() => {
+    setIsMounted(true); // Component is mounted on the client
+
     // Fetch the user's email (e.g., from localStorage, API, or context)
     const storedEmail = localStorage.getItem("userEmail"); // Example: retrieve from localStorage
     if (storedEmail) {
@@ -17,21 +21,23 @@ const UserMenu = () => {
 
   const handleLogout = async () => {
     try {
-      // Simulate logout service (replace with your actual logout function)
-      // await logoutUser();
-
       // Clear any client-side authentication data
       localStorage.removeItem("authToken"); // Example
       localStorage.removeItem("userEmail"); // Clear email
       sessionStorage.clear();
 
       // Redirect to the login page or home page
-      router.push("/login"); // Redirect using Next.js router
+      if (isMounted) {
+        router.push("/login"); // Redirect using Next.js router
+      }
     } catch (error) {
       console.error("Logout failed:", error);
       // Optionally, handle the error (e.g., show a notification)
     }
   };
+
+  // Render only on the client side
+  if (!isMounted) return null;
 
   return (
     <div className="relative">
@@ -49,12 +55,6 @@ const UserMenu = () => {
             <p className="text-sm font-medium text-gray-900">Thiran</p>
             <p className="text-sm text-gray-500">{email}</p>
           </div>
-          {/* <a
-            href="#"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-          >
-            Profile Settings
-          </a> */}
           <button
             onClick={handleLogout}
             className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 flex items-center space-x-2"

@@ -5,14 +5,14 @@ import { UserCircle, LogOut } from "lucide-react";
 
 const UserMenu = () => {
   const { data: session } = useSession(); // Access session data
-  const router = useRouter(); // Router for redirection
+  // const router = useRouter(); // Router for redirection
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLogout = async () => {
     try {
       // Sign out using NextAuth
       await signOut({ redirect: false });
-      router.push("/signin"); // Redirect to sign-in page
+      router.push("/login"); // Redirect to sign-in page
     } catch (error) {
       console.error("Logout failed:", error);
     }
