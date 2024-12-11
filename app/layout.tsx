@@ -1,19 +1,14 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
+import { Toaster } from '@/components/ui/toaster';
+import AuthProvider from '@/components/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Expencess Tracker',
-  description: 'create by Thiran',
-  icons: {
-    icon: [
-      { url: '/wallet.png', sizes: 'any', type: 'image/png' },
-    ],
-    
-  },
+  title: 'Expense Tracker',
+  description: 'Track your income and expenses easily',
 };
 
 export default function RootLayout({
@@ -23,7 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AuthProvider>
+          {children}
+          <Toaster />
+        </AuthProvider>
+      </body>
     </html>
   );
 }
